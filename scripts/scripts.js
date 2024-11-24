@@ -85,13 +85,13 @@ let durationButton = document.getElementById("duration-button");
 
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
-    duration = parseFloat(prompt("Enter a new duration"));
+    duration = prompt("Enter a new duration");
+    
     durationText.innerHTML = duration;
     recalculate();
 }
 
 durationButton.addEventListener("click", changeDuration);
 
-
+document.getElementById("duration-text").innerHTML = duration;
 recalculate();
-            
