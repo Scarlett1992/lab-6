@@ -29,9 +29,9 @@ let duration = 5;
 function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
     if (modelName === "XYZ") {
-        costLabel.innerHTML = (duration * 100).toFixed(2);
+        costLabel.innerHTML = (duration * 100);
     } else if (modelName === "CPRG") {
-        costLabel.innerHTML = (duration * 213).toFixed(2);
+        costLabel.innerHTML = (duration * 213);
     } else {
         costLabel.innerHTML = "Invalid model name";
     }
@@ -86,16 +86,12 @@ let durationButton = document.getElementById("duration-button");
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
     duration = parseFloat(prompt("Enter a new duration"));
-    if(isNaN(duration) || duration <= 0) {
-        alert("请输入有效的正数!");
-        duration = 0;
-    }
     durationText.innerHTML = duration;
     recalculate();
 }
 
 durationButton.addEventListener("click", changeDuration);
 
-// 页面加载时初始化计算
+
 recalculate();
             
